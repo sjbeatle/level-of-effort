@@ -1,0 +1,12 @@
+<h2>Hey! Who are you, again?</h2>
+<input
+  type='text'
+  placeholder='Name'
+  [(ngModel)]='name'
+/>
+<br />
+{{userService.name | async}}
+<br />
+<button
+  (click)='acceptName()'
+>Create a Room!</button>
