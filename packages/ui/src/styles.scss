@@ -1,7 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  font-family: 'Titillium Web', Helvetica, Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 19px;
+  background-image: url('./assets/bkg.jpg');
+}
 
 html, body {
   padding: 0;
   margin: 0;
-  font-family: sans-serif;
 }
