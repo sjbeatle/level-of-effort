@@ -1,5 +1,5 @@
 export const storedObject = {
-  get: (key: string, isSession?: boolean | undefined) => {
+  get: (key: string, isSession?: boolean) => {
     let value: any;
     const storage = isSession ? 'sessionStorage' : 'localStorage';
 
