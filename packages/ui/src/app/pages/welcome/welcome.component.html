@@ -10,6 +10,7 @@
     type='text'
     placeholder='Name'
     [(ngModel)]='name'
+    (keyup)="onKey($event)"
   />
   <br />
 </ng-template>

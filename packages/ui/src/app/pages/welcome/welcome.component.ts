@@ -23,6 +23,12 @@ export class WelcomeComponent implements OnInit {
     this.router.navigate([this.roomId || randomId()]);
   }
 
+  onKey(e: KeyboardEvent) {
+    if (e.keyCode === 13) {
+      this.acceptName();
+    }
+  }
+
   get roomId() {
     return history.state && history.state.room;
   }
