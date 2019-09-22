@@ -18,8 +18,8 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   acceptName() {
-    const roomId = 'room';
-    const room = this.route.snapshot.queryParams[roomId];
+    const key = 'room';
+    const room = this.route.snapshot.queryParams[key];
     this.userService.setName(this.name);
     this.router.navigate([room || randomId()]);
   }
