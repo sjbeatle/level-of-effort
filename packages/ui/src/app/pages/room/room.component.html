@@ -1,1 +1,6 @@
 <p>Welcome to the room, {{userService.name | async}}!</p>
+
+<app-card
+  *ngFor="let estimate of estimates"
+  [estimate]="estimate"
+></app-card>

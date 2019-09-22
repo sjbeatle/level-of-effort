@@ -8,6 +8,9 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
+
+  estimates: Array<number | string> = [ 0, 1, 2, 3, 5, 8, 13, 21, '?', 'Pass' ];
+
   constructor(
     private router: Router,
     private userService: UserService,
