@@ -23,7 +23,7 @@ button,
 textarea
 {
   margin:0;
-  border:$input-border;
+  border:$border-default;
   border-radius:.25rem;
   box-shadow:0 0 0 get-color('transparent', 0);
   padding:.5rem;
@@ -44,7 +44,7 @@ button:focus,
 select:focus
 {
   outline:0;
-  border:$input-border-focus;
+  border:$border-default-focus;
   box-shadow:$shadow-default;
 }
 
