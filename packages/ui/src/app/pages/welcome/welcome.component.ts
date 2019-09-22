@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { UserService } from 'src/app/user.service';
+import { randomId } from '../../shared/utils';
 
 @Component({
   selector: 'app-welcome',
@@ -12,12 +13,15 @@ export class WelcomeComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private route: ActivatedRoute,
     private userService: UserService,
   ) { }
 
   acceptName() {
+    const roomId = 'room';
+    const room = this.route.snapshot.queryParams[roomId];
     this.userService.setName(this.name);
-    // this.router.navigate(['room']);
+    this.router.navigate([room || randomId()]);
   }
 
   ngOnInit() { }
