@@ -24,3 +24,29 @@ body {
   margin-left: -1rem;
   margin-right: -1rem;
 }
+
+a,
+.h-link {
+  color: lightcoral;
+  background: none;
+  border: none;
+  box-shadow: none;
+  transition: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  &:active {
+    top: 0;
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
+  &:focus {
+    outline: 2px dashed lightcoral;
+    border: none;
+    box-shadow: none;
+  }
+}
