@@ -1,10 +1,17 @@
-<h2>Hey! Who are you, again?</h2>
-<input
-  type='text'
-  placeholder='Name'
-  [(ngModel)]='name'
-/>
-<br />
+<h2
+*ngIf='userService.name | async; else noUser'
+>Welcome back, {{userService.name | async}}!</h2>
+
+<ng-template #noUser>
+  <h2>Hey! Who are you, again?</h2>
+  <input
+    type='text'
+    placeholder='Name'
+    [(ngModel)]='name'
+  />
+  <br />
+</ng-template>
+
 <button
   class='btn-room'
   (click)='acceptName()'

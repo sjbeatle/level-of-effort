@@ -17,7 +17,9 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   acceptName() {
-    this.userService.setName(this.name);
+    if (this.name) {
+      this.userService.setName(this.name);
+    }
     this.router.navigate([this.roomId || randomId()]);
   }
 
