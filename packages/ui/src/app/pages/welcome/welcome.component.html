@@ -5,8 +5,7 @@
   [(ngModel)]='name'
 />
 <br />
-{{userService.name | async}}
-<br />
 <button
+  class='btn-room'
   (click)='acceptName()'
->Create a Room!</button>
+>{{buttonText}}</button>

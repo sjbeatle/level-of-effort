@@ -18,10 +18,16 @@ export class WelcomeComponent implements OnInit {
   ) { }
 
   acceptName() {
-    const key = 'room';
-    const room = this.route.snapshot.queryParams[key];
     this.userService.setName(this.name);
-    this.router.navigate([room || randomId()]);
+    this.router.navigate([this.roomId || randomId()]);
+  }
+
+  get roomId() {
+    return this.route.snapshot.queryParams.room;
+  }
+
+  get buttonText() {
+    return this.roomId ? 'Join the room!' : 'Create a room!';
   }
 
   ngOnInit() { }
