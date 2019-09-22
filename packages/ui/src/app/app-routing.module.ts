@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { WelcomeComponent } from './pages/welcome/welcome.component';
 import { RoomComponent } from './pages/room/room.component';
+import { RoomGuard } from './guards/room-guard';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   {
     path: ':room',
     component: RoomComponent,
+    canActivate: [RoomGuard],
   },
 ];
 
