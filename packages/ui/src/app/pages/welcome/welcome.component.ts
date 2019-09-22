@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { UserService } from 'src/app/user.service';
 import { randomId } from '../../shared/utils';
 
@@ -13,7 +13,6 @@ export class WelcomeComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private route: ActivatedRoute,
     private userService: UserService,
   ) { }
 
@@ -23,7 +22,7 @@ export class WelcomeComponent implements OnInit {
   }
 
   get roomId() {
-    return this.route.snapshot.queryParams.room;
+    return history.state && history.state.room;
   }
 
   get buttonText() {

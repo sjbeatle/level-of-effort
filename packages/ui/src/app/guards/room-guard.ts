@@ -18,7 +18,7 @@ export class RoomGuard implements CanActivate {
       return true;
     } else {
       // go to welcome page and pass along the room
-      this.router.navigate([''], { queryParams: { room } });
+      this.router.navigate([''], { state: { room } });
       return false;
     }
   }
