@@ -11,3 +11,16 @@ html {
   font-size: 19px;
   background-image: url('./assets/bkg.jpg');
 }
+
+body {
+  padding: 0 1rem;
+}
+
+/*------------------------------------*\
+  #HELPER SELECTORS
+\*------------------------------------*/
+
+.h-override-body-pad {
+  margin-left: -1rem;
+  margin-right: -1rem;
+}
