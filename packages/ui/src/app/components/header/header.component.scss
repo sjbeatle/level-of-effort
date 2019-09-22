@@ -27,4 +27,13 @@
   padding: .5rem 1rem;
   text-align: center;
   box-shadow: $shadow-default;
+  cursor: pointer;
+  transition: text-shadow 1s;
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-shadow: $shadow-blue;
+    transition: text-shadow 300ms;
+  }
 }
