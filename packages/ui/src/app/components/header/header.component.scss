@@ -1,3 +1,5 @@
+@import 'variables';
+
 :host {
   display: block;
   position: relative;
@@ -6,8 +8,8 @@
     content: '';
     background-image: url('../../../assets/bkg-header.jpg');
     background-size: 150px 150px;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    margin-left: -$page-padding;
+    margin-right: -$page-padding;
     opacity: 0.2;
     top: 0;
     left: 0;
@@ -24,5 +26,5 @@
   font-weight: 700;
   padding: .5rem 1rem;
   text-align: center;
-  box-shadow: 0px 0px 5px rgba(0,0,0,.25);
+  box-shadow: $shadow-default;
 }

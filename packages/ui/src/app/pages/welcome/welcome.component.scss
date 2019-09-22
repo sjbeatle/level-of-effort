@@ -1,11 +1,13 @@
+@import 'variables';
+
 :host {
   display: block;
   text-align: center;
-  background-color: #fff;
+  background-color: $white;
   max-width: 450px;
   margin: 2rem auto;
   padding: 2rem;
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  box-shadow: $shadow-default;
   border-radius: .25rem;
 }
 

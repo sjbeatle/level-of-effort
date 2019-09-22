@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'variables';
+@import 'mixins';
 @import '../node_modules/reset-css/sass/reset';
 @import './forms';
 
@@ -8,12 +10,13 @@
 }
 
 html {
-  font-size: 19px;
+  font-size: $font-size + px;
   background-image: url('./assets/bkg.jpg');
+  @include antialias();
 }
 
 body {
-  padding: 0 1rem;
+  padding: 0 $page-padding;
 }
 
 /*------------------------------------*\
@@ -21,13 +24,13 @@ body {
 \*------------------------------------*/
 
 .h-override-body-pad {
-  margin-left: -1rem;
-  margin-right: -1rem;
+  margin-left: -$page-padding;
+  margin-right: -$page-padding;
 }
 
 a,
 .h-link {
-  color: lightcoral;
+  color: get-contextual-color('red', 1);
   background: none;
   border: none;
   box-shadow: none;
@@ -45,7 +48,7 @@ a,
   }
 
   &:focus {
-    outline: 2px dashed lightcoral;
+    outline: 2px dashed get-contextual-color('red', 1);
     border: none;
     box-shadow: none;
   }

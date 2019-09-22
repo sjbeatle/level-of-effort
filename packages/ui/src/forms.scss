@@ -1,3 +1,5 @@
+@import 'variables';
+
 /* ----------------------------------------------------------------------------------------------------
 Super Form Reset
 A couple of things to watch out for:
@@ -11,7 +13,7 @@ A couple of things to watch out for:
 - By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
 ----------------------------------------------------------------------------------------------------*/
 input {
-  -webkit-appearance: none;
+  -webkit-appearance:none;
 }
 
 input,
@@ -21,20 +23,19 @@ button,
 textarea
 {
   margin:0;
-  border:1px solid #ccc;
-  border-radius: .25rem;
-  box-shadow: 0 0 5px rgba(0,0,0,0);
+  border:$input-border;
+  border-radius:.25rem;
+  box-shadow:0 0 0 get-color('transparent', 0);
   padding:.5rem;
   display:inline-block;
   vertical-align:middle;
   white-space:normal;
-  background-color:#fff;
+  background-color:$white;
   line-height:1;
 
   /* Browsers have different default form fonts */
   font-size:1rem;
-  font-family:Arial;
-  transition: border 200ms, box-shadow 200ms;
+  transition:border 200ms, box-shadow 200ms;
 }
 
 /* Remove the outer glow in Webkit */
@@ -43,8 +44,8 @@ button:focus,
 select:focus
 {
   outline:0;
-  border:1px solid lightblue;
-  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  border:$input-border-focus;
+  box-shadow:$shadow-default;
 }
 
 /* Box Sizing Reset
@@ -71,7 +72,7 @@ select
   -webkit-box-sizing:border-box;
   -moz-box-sizing:border-box;
   box-sizing:border-box;
-  cursor: pointer;
+  cursor:pointer;
 }
 
 /* Text Inputs
@@ -100,8 +101,8 @@ input[type=week]
 input[type=checkbox],
 input[type=radio]
 {
-  width:13px;
-  height:13px;
+  width:get-rem(13);
+  height:get-rem(13);
 }
 
 /* File Uploads
@@ -136,14 +137,14 @@ input[type="reset"],
 input[type="button"],
 input[type="submit"]
 {
-  position: relative;
+  position:relative;
   /* Fix IE7 display bug */
   overflow:visible;
   width:auto;
-  background-color: #f9f9f9;
+  background-color:get-color('neutral', 1);
 
   &:active {
-    top: 1px;
+    top:1px;
   }
 }
 
