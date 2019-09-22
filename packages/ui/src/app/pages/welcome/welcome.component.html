@@ -19,3 +19,9 @@
   class='btn-room'
   (click)='acceptName()'
 >{{buttonText}}</button>
+
+<button
+  class='btn-reset-name h-link'
+  (click)='resetName()'
+  *ngIf='userService.name | async'
+>Not {{userService.name | async}}? Click here.</button>
