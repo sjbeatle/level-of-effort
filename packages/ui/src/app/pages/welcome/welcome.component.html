@@ -1,10 +1,12 @@
 <h2
-*ngIf='userService.name | async; else noUser'
+  class='welcome-title'
+  *ngIf='userService.name | async; else noUser'
 >Welcome back, {{userService.name | async}}!</h2>
 
 <ng-template #noUser>
-  <h2>Hey! Who are you, again?</h2>
+  <h2 class='welcome-title'>Hey! Who are you, again?</h2>
   <input
+    class='welcome-name'
     type='text'
     placeholder='Name'
     [(ngModel)]='name'

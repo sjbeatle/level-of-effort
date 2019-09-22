@@ -1,10 +1,19 @@
 :host {
   display: block;
   text-align: center;
+  background-color: #fff;
+  max-width: 450px;
+  margin: 2rem auto;
+  padding: 2rem;
+  box-shadow: 0 0 5px rgba(0,0,0,.2);
+  border-radius: .25rem;
 }
 
-input, button {
-  width: 300px;
-  margin: 0 auto;
-  padding: .25rem;
+.welcome-title {
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.welcome-name {
+  margin-bottom: 1rem;
 }
