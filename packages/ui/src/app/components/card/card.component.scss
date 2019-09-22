@@ -1,0 +1,8 @@
+@import 'variables';
+
+.card {
+  display: inlien-flex;
+  height: get-rem(161.8);
+  width: get-rem(100);
+  margin: .5rem;
+}
