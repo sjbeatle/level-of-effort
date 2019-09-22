@@ -8,8 +8,6 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./room.component.scss']
 })
 export class RoomComponent implements OnInit {
-  user = this.userService.name || 'unknown';
-
   constructor(
     private router: Router,
     private userService: UserService,
@@ -17,5 +15,4 @@ export class RoomComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }
