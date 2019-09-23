@@ -1,6 +1,7 @@
 <p>Welcome to the room, {{userService.name | async}}!</p>
-
+<div class="vote">{{vote}}</div>
 <app-card
   *ngFor="let estimate of estimates"
   [estimate]="estimate"
+  (voted)="onVoted($event)"
 ></app-card>
