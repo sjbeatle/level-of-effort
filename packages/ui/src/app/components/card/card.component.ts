@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,11 +7,27 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() estimate: number | string;
+  @Output() voted = new EventEmitter<number | string>();
+  didVote = false;
 
   constructor() { }
 
   cardClick() {
-    alert(`You clicked, ${this.estimate}!`);
+    if (this.didVote) {
+      this.rescind();
+    } else {
+      this.vote();
+    }
+  }
+
+  vote() {
+    this.voted.emit(this.estimate);
+    this.didVote = true;
+  }
+
+  rescind() {
+    this.voted.emit('rescind');
+    this.didVote = false;
   }
 
   ngOnInit() {

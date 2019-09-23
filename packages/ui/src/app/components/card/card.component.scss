@@ -1,8 +1,35 @@
 @import 'variables';
 
+$transition: all 200ms;
+
 .card {
   display: inlien-flex;
   height: get-rem(161.8);
   width: get-rem(100);
   margin: .5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: $white;
+  top: 0;
+  transition: $transition;
+
+  &--green {
+    background-color: get-contextual-color('green', 2);
+  }
+
+  &--blue {
+    background-color: get-contextual-color('blue', 3);
+  }
+
+  &--yellow {
+    background-color: get-contextual-color('yellow', 2);
+    color: $black;
+  }
+
+  &--active {
+    top: -10px;
+    transition: $transition;
+    translate: rotate(5deg);
+    transform: scale(1.1);
+  }
 }
