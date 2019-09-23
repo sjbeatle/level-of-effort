@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-card',
@@ -7,6 +7,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 })
 export class CardComponent implements OnInit {
   @Input() estimate: number | string;
+  @Input() active: boolean;
   @Output() voted = new EventEmitter<number | string>();
   didVote = false;
 
@@ -31,6 +32,12 @@ export class CardComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  // TODO: Find out why I need to disable the next line
+  // tslint:disable-next-line:use-lifecycle-interface
+  ngOnChanges() {
+    this.didVote = this.active;
   }
 
 }
