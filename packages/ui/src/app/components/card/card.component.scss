@@ -1,17 +1,21 @@
 @import 'variables';
 
-$transition: all 200ms;
+$transition: transform 250ms;
 
 .card {
-  display: inlien-flex;
+  position: relative;
   height: get-rem(161.8);
   width: get-rem(100);
   margin: .5rem;
   font-weight: 700;
   font-size: 2rem;
   color: $white;
-  top: 0;
   transition: $transition;
+
+  &:focus {
+    outline: 2px dashed $black;
+    outline-offset: 2px;
+  }
 
   &--green {
     background-color: get-contextual-color('green', 2);
@@ -27,9 +31,14 @@ $transition: all 200ms;
   }
 
   &--active {
-    top: -10px;
     transition: $transition;
-    translate: rotate(5deg);
     transform: scale(1.1);
+  }
+
+  &__corner {
+    position: absolute;
+    top: .5rem;
+    left: .5rem;
+    font-size: 1rem;
   }
 }

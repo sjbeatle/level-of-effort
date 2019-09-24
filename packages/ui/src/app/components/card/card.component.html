@@ -1,10 +1,17 @@
 <button
-  class='card'
+  class="card"
   [ngClass]="{
     'card--green': estimate < 8,
     'card--blue': estimate > 5,
     'card--yellow': estimate.length,
     'card--active': didVote
   }"
-  (click)='cardClick()'
->{{estimate}}</button>
+  (click)="cardClick()"
+  attr.aria-label="vote {{estimate}}"
+>
+  <div
+    class="card__corner"
+    attr.aria-hidden="true"
+  >{{estimate}}</div>
+  {{estimate}}
+</button>
